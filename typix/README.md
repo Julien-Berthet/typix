@@ -112,12 +112,12 @@ class Greeting(Typix):
         return f"{greeting_type} {person}! Here is the argument value: {self.value}"
 ```
 
-We create a class with the name of the type that inherits `Typix`. Then we overload the `process` method, and we define the parameters of the type.  
+We create a class with the name of the type that inherits `Typix`. Then, we overload the `process` method, and we define the parameters of the type.  
 `self` will contain context information if needed.  
 The return value of the function will become the new value of the annotated argument.  
 If an unwanted value goes into the argument, we should return an error. Not with a `raise`
 statement but by returning `self.error` with the error message as
-the argument. The error also takes a optional argument `fatal`. If an error is fatal, this error will be raised at runtime, else, it won't be raised at all but it will be written in the context and a parent type like `Strict` can access it and raise it as a fatal error. That is how contexts works. Every typecheck, either in a function or not: context contains returned errors, the current value and argument and function data to be accessed by parent types. A `CheckResult` object returned by the `typecheck` function can also be used as context.  
+the argument. The error also takes an optional argument `fatal`. If an error is fatal, this error will be raised at runtime, otherwise, it won't be raised at all but it will be written in the context and a parent type like `Strict` can access it and raise it as a fatal error. That is how contexts works. Every typecheck, either in a function or not: context contains returned errors, the current value and argument and function data to be accessed by parent types. A `CheckResult` object returned by the `typecheck` function can also be used as context.  
 In real conditions, we can use the newly made type like this:
 ```py
 from typix import processor
