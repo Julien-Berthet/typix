@@ -1,0 +1,8 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+typix.egg-info/PKG-INFO
+typix.egg-info/SOURCES.txt
+typix.egg-info/dependency_links.txt
+typix.egg-info/top_level.txt
