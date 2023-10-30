@@ -30,7 +30,7 @@ def test(my_arg: Strict(int)):
     print("test:", my_arg)
 ```
 
-The `Strict` dynamic type is a built-in dynamic type that allow strong
+The `Strict` dynamic type is a built-in dynamic type that allows strong
 typing on function arguments. To use it, it must wrap a child type.
 
 ```py
@@ -58,7 +58,7 @@ test: 1 5.0
 ```
 
 Finally a dynamic type can wrap another dynamic type to create a **Compound Dynamic Type**. In the following example we use strong typing with `Strict` on the type conversion with `Convert`.  
-`Convert` won't raise any error by itself, so `Strict` will implement that.
+`Convert` will not raise any error by itself, so `Strict` will implement that.
 
 ```py
 from typix import processor, Strict, Convert
@@ -81,7 +81,7 @@ typix.error.TypixError: Strict constraint failed: Cannot convert 'str' to 'int'
 
 In a non-function context, type checking a value is often needed. This module provides the `typecheck` function that allow dynamic type checking
 with some extra features.  
-The function takes is defined like this:  
+The function is defined like this:  
 `typecheck(value, type_, context = None)`  
 It works like the `isinstance` built-in function but it supports `GenericAliases` like `list[int]` and dynamic types. The function will return a `CheckResult` object containing data about the typecheck but it can be used as a boolean value. Hence, it can be used in an `if` statement directly. The context parameter is needed when the dynamic type needs argument data. In this case, the `typecheck` function shouldn't be used or argument data should be passed with the context argument using a `Context` object. Thus, the `Context` object is not meant to be used directly, but for edge cases.  
 Here is an example of the usage of the `typecheck` function:
