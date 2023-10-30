@@ -79,7 +79,7 @@ typix.error.TypixError: Strict constraint failed: Cannot convert 'str' to 'int'
 
 > **Type checking with the `typecheck` function**
 
-In a non-function context, type checking a value is often needed. This module provides the `typecheck` function that allow dynamic type checking
+In a non-function context, type checking a value is often needed. This module provides the `typecheck` function that allows dynamic type checking
 with some extra features.  
 The function is defined like this:  
 `typecheck(value, type_, context = None)`  
